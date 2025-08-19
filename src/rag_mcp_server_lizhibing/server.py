@@ -6,9 +6,9 @@ from typing import Any, Dict, List, Optional
 
 from mcp.server.fastmcp import FastMCP
 from mcp.types import TextContent
-from .schemas.rag import RAGQuery
-from .service import RAGService
-from .config import config
+from rag_mcp_server_lizhibing.schemas.rag import RAGQuery
+from rag_mcp_server_lizhibing.service import RAGService
+from rag_mcp_server_lizhibing.config import config
 
 # 配置日志
 if config.RAG_ENABLE_LOGGING:
