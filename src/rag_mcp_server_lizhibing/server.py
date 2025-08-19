@@ -78,33 +78,7 @@ def run():
     parser.add_argument("--mount-path", type=str, default="/mcp", help="SSE挂载路径")
     
     args = parser.parse_args()
-    
-    try:
-        if args.transport == "sse":
-            # SSE传输模式
-            logger.info(f"启动SSE服务器在 {args.host}:{args.port}")
-            # 配置服务器设置
-            mcp.settings.port = args.port
-            mcp.settings.host = args.host
-            
-            # 启动SSE服务器
-            mcp.run(transport="sse", mount_path=args.mount_path)
-            
-        elif args.transport == "streamable-http":
-            # HTTP传输模式
-            logger.info(f"启动HTTP服务器在 {args.host}:{args.port}")
-            mcp.settings.port = args.port
-            mcp.settings.host = args.host
-            mcp.run(transport="streamable-http", mount_path=args.mount_path)
-            
-        else:
-            # stdio传输模式（默认）
-            logger.info("启动stdio服务器")
-            mcp.run(transport="stdio")
-            
-    except Exception as e:
-        logger.error(f"启动服务器失败: {e}")
-        sys.exit(1)
+    mcp.run()
 
 if __name__ == "__main__":
     run()
