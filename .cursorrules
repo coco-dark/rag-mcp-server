@@ -1,0 +1,45 @@
+# Cursor AI 助手规则
+
+## 可用工具
+这个项目包含一个 RAG MCP 服务器，提供以下功能：
+
+### MCP 工具
+- `rag_search`: 搜索文档，使用 RAGQuery 参数
+  - query: 查询内容
+  - top_k: 返回结果数量
+  - query_type: 查询类型
+  - filter: 过滤条件
+  - rerank: 是否重新排序
+  - rerank_model: 重新排序模型
+
+### 使用示例
+```python
+# 搜索文档
+rag_search({
+  "query": "人工智能",
+  "top_k": 5,
+  "query_type": "semanticSearch"
+})
+
+# 简单搜索
+rag_search({
+  "query": "Python编程"
+})
+```
+
+## 代码风格
+- 使用 Python 3.11+ 语法
+- 遵循 PEP 8 代码规范
+- 添加适当的类型注解
+- 包含详细的文档字符串
+
+## 项目结构
+- `schemas/`: 数据模型定义
+- `service/`: 业务逻辑服务
+- `config.py`: 配置管理
+- `server.py`: MCP 服务器入口
+
+## 注意事项
+- 确保 MCP 服务器正在运行
+- 检查环境变量配置
+- 验证依赖包已正确安装 
