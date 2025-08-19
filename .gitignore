@@ -9,8 +9,3 @@ wheels/
 
 # Virtual environments
 .venv
-.pypirc
-*.env
-secrets/
-__pycache__/
-*.pyc
